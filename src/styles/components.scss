@@ -1,0 +1,340 @@
+@import "./color.scss";
+// Logo ========================================================================================
+.logo__link {
+   display: flex;
+   position: relative;
+   flex: 0 0 72px;
+   width: 72px;
+   height: 60px;
+   margin-right: 10px;
+   z-index: 5;
+   transition: all 0.3s ease 0s;
+   @media (max-width: 472.98px) {
+      flex: 0 0 52px;
+      width: 52px;
+      height: 44px;
+   }
+   .logo__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+// Nav ========================================================================================
+.menu__body {
+   margin-right: 10px;
+   @media (max-width: 870px) {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: -100%;
+      overflow: auto;
+      padding: 135px 30px 60px 30px;
+      background-color: $colorDark;
+      transition: all 0.3s ease 0s;
+      opacity: 0;
+      visibility: hidden;
+      &:before {
+         content: "";
+         position: fixed;
+         width: 100%;
+         height: 90px;
+         top: 0;
+         left: 0;
+         background-color: $colorDark;
+         z-index: 1;
+      }
+      @media (max-width: 472.98px) {
+         &:before {
+            height: 70px;
+         }
+      }
+   }
+   .menu__list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      @media (max-width: 870px) {
+         flex-direction: column;
+      }
+   }
+   .menu__item {
+   }
+   .menu__link {
+      padding: 5px 10px;
+      font-size: 18px;
+      line-height: 22px;
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            color: $colorGold;
+         }
+      }
+      @media (max-width: 870px) {
+         font-size: 22px;
+      }
+   }
+}
+._menu__link_active {
+   color: $colorGold;
+   font-weight: 700;
+}
+// Button ========================================================================================
+.button {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 24px 40px;
+   background-color: $colorGold;
+   font-size: 18px;
+   font-weight: 700;
+   line-height: 22px;
+   text-transform: uppercase;
+   transition: all 0.3s ease 0s;
+   @media (any-hover: hover) {
+      &:hover {
+         background-color: $colorDarkGold;
+         box-shadow: 0 0 5px $colorDarkGold;
+      }
+   }
+   @media (max-width: 472.98px) {
+      padding: 15px 25px;
+      font-size: 16px;
+   }
+   img {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+   }
+}
+.button__product {
+   padding: 13px 20px;
+   text-transform: lowercase;
+   font-weight: 600;
+   max-width: 169px;
+   margin: 0px auto;
+   span {
+      text-transform: capitalize;
+   }
+}
+// Form ========================================================================================
+.form__footer_email {
+   display: flex;
+   align-items: center;
+   flex: 0 0 328px;
+   width: 328px;
+   height: 72px;
+   border-radius: 36px;
+   background-color: $colorBrown;
+   padding: 12px;
+   @media (max-width: 870px) {
+      lex: 0 0 290px;
+      width: 290px;
+      height: 62px;
+   }
+   @media (max-width: 472.98px) {
+      lex: 0 0 100%;
+      width: 100%;
+   }
+   .form__footer_input {
+      width: 100%;
+      padding: 0 10px;
+      background-color: inherit;
+      color: $colorWhite;
+      font-family: $urbanistFont;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 180%;
+      letter-spacing: 0%;
+      opacity: 0.8;
+      margin-right: 12px;
+   }
+   .form__footer_btn {
+      position: relative;
+      box-shadow: 0px 22px 44px 0px rgba(201, 158, 113, 0.2);
+      background-color: $colorGold;
+      border-radius: 50%;
+      flex: 0 0 48px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: $colorDarkGold;
+         }
+      }
+      @media (max-width: 870px) {
+         flex: 0 0 38px;
+         width: 38px;
+         height: 38px;
+      }
+      svg {
+         width: 20px;
+         height: 20px;
+         color: $colorWhite;
+      }
+   }
+}
+// Button Up ========================================================================================
+.button__up {
+   position: fixed;
+   bottom: 110px;
+   right: 20px;
+   z-index: 1;
+   width: 70px;
+   height: 70px;
+   background-color: $colorGold;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.3s ease 0s;
+   opacity: 0;
+   visibility: hidden;
+   @media (any-hover: hover) {
+      &:hover {
+         background-color: $colorDarkGold;
+         box-shadow: 0 0 10px $colorDarkGold;
+      }
+   }
+   svg {
+      color: $colorWhite;
+      width: 30px;
+      height: 30px;
+      transform: rotate(-90deg);
+   }
+}
+._button__up_active {
+   .button__up {
+      opacity: 1;
+      visibility: visible;
+   }
+}
+// Label Block ========================================================================================
+.label__block {
+   color: $colorGold;
+   font-size: 18px;
+   font-weight: 600;
+   line-height: 22px;
+   margin-bottom: 12px;
+}
+// Title Block ========================================================================================
+.title__block {
+   font-family: $righteousFont;
+   font-size: 48px;
+   line-height: 130%;
+   margin-bottom: 36px;
+   @media (max-width: 1200px) {
+      font-size: 38px;
+   }
+   @media (max-width: 472.98px) {
+      font-size: 28px;
+      margin-bottom: 26px;
+   }
+}
+// Text Block ========================================================================================
+.text__block {
+   font-weight: 500;
+   line-height: 180%;
+   text-transform: capitalize;
+   opacity: 0.8;
+   @media (max-width: 1200px) {
+      line-height: 160%;
+   }
+   @media (max-width: 472.98px) {
+      line-height: 140%;
+   }
+}
+// Chat ========================================================================================
+.chat {
+   // Chat Button ========================================================================================
+   .chat__btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+      width: 70px;
+      height: 70px;
+      background-color: $colorGold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease 0s;
+      animation: pulseChatBtn 3s infinite;
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: $colorDarkGold;
+            box-shadow: 0 0 10px $colorDarkGold;
+         }
+      }
+      svg {
+         position: relative;
+         top: 2px;
+         color: $colorWhite;
+         width: 30px;
+         height: 30px;
+      }
+   }
+   // Chat Form ========================================================================================
+   .chat__body {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      z-index: 100;
+      width: 0;
+      max-width: 100%;
+      height: 0;
+      background-color: $colorBrown;
+      // color: $colorDark;
+      font-family: $urbanistFont;
+      border-radius: 20px;
+      padding: 20px;
+      // box-shadow: 0px 22px 44px 0px rgba(201, 158, 113, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.3s ease 0s;
+      opacity: 0;
+      visibility: hidden;
+   }
+}
+@keyframes pulseChatBtn {
+   0% {
+      transform: scale(1);
+      // box-shadow: 0 0 0 $colorDarkGold;
+   }
+   50% {
+      transform: scale(1.03);
+      // box-shadow: 0 0 10px $colorDarkGold;
+   }
+   100% {
+      transform: scale(1);
+      // box-shadow: 0 0 0 $colorDarkGold;
+   }
+}
+._chat__active {
+   .chat__body {
+      opacity: 1;
+      visibility: visible;
+      width: 400px;
+      height: 500px;
+   }
+   .chat__btn {
+      svg {
+         color: $colorWhite;
+         width: 40px;
+         height: 40px;
+         transform: rotate(-180deg);
+      }
+   }
+}

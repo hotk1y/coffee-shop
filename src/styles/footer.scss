@@ -1,0 +1,44 @@
+@import "./color.scss";
+//========================================================================================
+.footer {
+   .footer__wrapper {
+      display: flex;
+      flex-direction: column;
+   }
+   .footer__container {
+   }
+   //========================================================================================
+   .footer__top {
+      padding: 60px 0;
+      @media (max-width: 870px) {
+         padding: 50px 0;
+      }
+   }
+   .footer__body {
+      @media (min-width: 472.98px) {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+      }
+   }
+   .footer__logo {
+      @media (max-width: 472.98px) {
+         display: none;
+      }
+   }
+   //========================================================================================
+   .footer__bottom {
+      background-color: $colorBrown;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      @media (max-width: 870px) {
+         min-height: 70px;
+      }
+   }
+   .footer__bottom_copyright {
+      @media (max-width: 472.98px) {
+         font-size: 14px;
+      }
+   }
+}
